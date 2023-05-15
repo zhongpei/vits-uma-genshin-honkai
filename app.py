@@ -9,6 +9,7 @@ from models import SynthesizerTrn
 from text import text_to_sequence
 import torch
 from torch import no_grad, LongTensor
+from gradio_client import utils as client_utils
 import webbrowser
 import logging
 import gradio.processing_utils as gr_processing_utils
@@ -20,7 +21,7 @@ def audio_postprocess(self, y):
     data = audio_postprocess_ori(self, y)
     if data is None:
         return None
-    return gr_processing_utils.encode_url_or_file_to_base64(data["name"])
+    return client_utils.encode_url_or_file_to_base64(data["name"])
 gr.Audio.postprocess = audio_postprocess
 
 def get_text(text, hps):

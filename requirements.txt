@@ -8,10 +8,12 @@ tensorboard
 torch
 torchvision
 Unidecode
-pyopenjtalk
+#pyopenjtalk
+pyopenjtalk-prebuilt
 ffmpeg
 jamo
 cn2an
 gradio
 pypinyin
 jieba
+httpx[socks]
